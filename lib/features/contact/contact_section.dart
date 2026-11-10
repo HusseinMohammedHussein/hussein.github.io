@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_spacing.dart';
+import '../../core/models/portfolio_models.dart';
 import '../../core/utils/launch_link.dart';
 import '../../core/widgets/app_scope.dart';
+import '../../core/widgets/brand_icons.dart';
 import '../../core/widgets/reveal.dart';
 import '../../core/widgets/section.dart';
 
@@ -45,13 +47,15 @@ class ContactSection extends StatelessWidget {
                       onPressed: () => launchLink(mailtoUrl(profile.email)),
                       child: const Text('Email me'),
                     ),
-                    OutlinedButton(
+                    OutlinedButton.icon(
                       onPressed: () => launchLink(profile.linkedinUrl),
-                      child: const Text('LinkedIn'),
+                      icon: const BrandIcon(icon: SocialIcon.linkedin, size: 18),
+                      label: const Text('LinkedIn'),
                     ),
-                    OutlinedButton(
+                    OutlinedButton.icon(
                       onPressed: () => launchLink(profile.githubUrl),
-                      child: const Text('GitHub'),
+                      icon: const BrandIcon(icon: SocialIcon.github, size: 18),
+                      label: const Text('GitHub'),
                     ),
                     OutlinedButton(
                       onPressed: () {

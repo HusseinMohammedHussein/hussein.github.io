@@ -7,6 +7,7 @@ import '../../core/constants/section_ids.dart';
 import '../../core/models/portfolio_models.dart';
 import '../../core/utils/launch_link.dart';
 import '../../core/widgets/app_scope.dart';
+import '../../core/widgets/brand_icons.dart';
 import '../../core/widgets/reveal.dart';
 import '../../core/widgets/section.dart';
 
@@ -105,19 +106,13 @@ class SocialButton extends StatelessWidget {
 
   final SocialLink link;
 
-  IconData get _icon => switch (link.icon) {
-        SocialIcon.github => Icons.code,
-        SocialIcon.linkedin => Icons.work_outline,
-        SocialIcon.email => Icons.mail_outline,
-      };
-
   @override
   Widget build(BuildContext context) {
     return Tooltip(
       message: link.label,
       child: IconButton.outlined(
         onPressed: () => launchLink(link.url),
-        icon: Icon(_icon, size: 20),
+        icon: BrandIcon(icon: link.icon),
         tooltip: link.label,
       ),
     );
