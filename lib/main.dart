@@ -6,5 +6,6 @@ import 'app/bootstrap.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   GoogleFonts.config.allowRuntimeFetching = true;
+
   runApp(const PortfolioBootstrap());
 }
